@@ -90,6 +90,7 @@ ns('App.view.Index', Backbone.View.extend({
 		this.interval = setInterval($.proxy(this.gameInterval, this), 1000);
 	},
 	endGame: function() {
+		clearInterval(this.interval);
 		this.$area.unbind();
 		$(document).unbind('mousemove');
 
@@ -141,7 +142,6 @@ ns('App.view.Index', Backbone.View.extend({
 		this.cur = 0;
 
 		if (this.currentRoundTime == 1) {
-			clearInterval(this.interval);
 			this.endGame();
 		}
 	},
