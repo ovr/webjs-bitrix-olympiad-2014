@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>MouseMoveSpeed</title>
+
+	<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/font-awesome.min.css" rel="stylesheet">
+
+	<script src="/src/vendor/jquery.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+
+	<script src="/src/lib/ns.js"></script>
+	<!--<script src="/src/vendor/raphael.2.1.0.min.js"></script>-->
+	<script src="/src/vendor/gauge.min.js"></script>
+	<script src="/src/vendor/underscore.js"></script>
+	<script src="/src/vendor/backbone-min.js"></script>
+	<script src="/src/app/views/Layout.js"></script>
+	<script src="/src/app/views/index/Index.js"></script>
+	<script src="/src/app/views/index/OptionsModal.js"></script>
+	<script src="/src/application.js"></script>
+
+	<style>
+		.tachometer-1 {font-size: 1em;}
+		.tachometer-2 {font-size: 1.25em;}
+		.tachometer-3 {font-size: 1.5em;}
+
+		.options {float: right;}
+		#checkAreaBox {width: 340px; height: 220px; background-color: #808080; position: relative;}
+		#start {position: absolute; bottom: 10px; left: 40%;}
+		.bottom-buffer {margin-bottom: 20px;}
+	</style>
+</head>
+<body>
+	<<div class="modal fade" id="optionsModal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">MouseMoveSpeed ver 0.0.0</h4>
+				</div>
+				<div class="modal-body">
+					<ul class="nav nav-tabs bottom-buffer">
+						<li class="active"><a href="#options" data-toggle="tab">Настройка</a></li>
+						<li><a href="#author" data-toggle="tab">Автор</a></li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active" id="options">
+							<form role="form">
+								<div class="form-group">
+									<label for="roundTime">Время раунда сек.</label>
+									<input type="email" class="form-control" id="roundTime" placeholder="Введите время раунда">
+									min:10 | max:50
+								</div>
+								<div class="form-group">
+									<label for="resultsTotal">Сколько результатов сохранять (LocalStorage)</label>
+									<input type="password" class="form-control" id="resultsTotal" placeholder="Введите время раунда">
+									min: 5 | max: 20
+								</div>
+								<button type="button" class="btn btn-default" data-dismiss="modal">Очистить</button>
+							</form>
+						</div>
+						<div class="tab-pane" id="author">
+							<div class="row">
+								<div class="col-md-5">
+									<a href="http://gravatar.com/emails/" class="vcard-avatar"><img class="avatar js-avatar" data-user="572096" height="230" src="https://1.gravatar.com/avatar/d89f305acac33357cf70111f60b93e9f?d=https%3A%2F%2Fidenticons.github.com%2Ff7b070de3e21571843b4855cfe32fa63.png&amp;r=x&amp;s=460" width="230"></a>
+								</div>
+								<div class="col-md-6">
+									<h2>Дмитрий Пацура</h2>
+
+									<p>zaets28rus@gmail.com</p>
+
+									<p><a href="https://github.com/zaets28rus">https://github.com/zaets28rus</a></p>
+
+									<p>БГПУ</p>
+
+									<p>ФИЗМАТ!!!</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container index-index-index">
+		<legend class="row game-header scheduler-border">
+			MouseMoveSpeed
+			<a href="#"><i class="fa fa-tachometer tachometer-3"></i></a>
+			<a href="#"><i class="fa fa-tachometer tachometer-2"></i></a>
+			<a href="#"><i class="fa fa-tachometer tachometer-1"></i></a>
+
+			<a href="#" class="options"><i class="fa fa-cog  fa-spin"></i></a>
+		</legend>
+		<div id="game row">
+			<div class="col-md-4">
+				<canvas id="gauge"></canvas>
+				<div id="checkAreaBox">
+					<div class="current-work">
+						<h2>Max: <span class="max">0</span> px/sec</h2>
+						<h3>Cur: <span class="cur">0</span> px/sec</h3>
+					</div>
+					<button id="start" class="btn btn-primary btn-sm" type="button">GoGo</button>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<table class="table" id="results">
+					<thead>
+					<tr>
+						<th>№</th>
+						<th>Дата</th>
+						<th>Максимальная скорость скорость</th>
+					</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div><!-- /.container -->
+</body>
+</html>
