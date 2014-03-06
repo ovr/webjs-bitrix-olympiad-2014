@@ -1,0 +1,22 @@
+{
+  "name": "webjs-bitrix-olympiad-2014",
+  "version": "0.0.0",
+  "description": "ERROR: No README.md file found!",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.5.5",
+    "gulp-connect": "^1.0.7",
+    "gulp-concat": "^2.1.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zaets28rus/webjs-bitrix-olympiad-2014.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "gitHead": "4d3ed1753126305afe6548397e1e2d6658e863c7"
+}

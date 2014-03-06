@@ -1,0 +1,8 @@
+.tachometer-1 {font-size: 1em;}
+.tachometer-2 {font-size: 1.25em;}
+.tachometer-3 {font-size: 1.5em;}
+
+.options {float: right;}
+#checkAreaBox {width: 340px; height: 220px; background-color: #808080; position: relative;}
+#start {position: absolute; bottom: 10px; left: 40%;}
+.bottom-buffer {margin-bottom: 20px;}

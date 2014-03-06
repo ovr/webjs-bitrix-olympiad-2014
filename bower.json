@@ -1,0 +1,23 @@
+{
+  "name": "webjs-bitrix-olympiad-2014",
+  "version": "0.0.0",
+  "homepage": "https://github.com/zaets28rus/webjs-bitrix-olympiad-2014",
+  "authors": [
+    "Дмитрий Пацура <zaets28rus@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "underscore": "~1.6.0",
+    "jquery": "~2.1.0",
+    "bootstrap": "~3.1.1",
+    "gauge.js": "~1.0.0",
+    "backbone": "~1.1.2"
+  }
+}
