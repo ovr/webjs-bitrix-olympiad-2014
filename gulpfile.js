@@ -8,8 +8,8 @@ var gulp = require('gulp'),
 
 gulp.task('stylesheets', function () {
     gulp.src([
-            rootCssPath + 'bootstrap.css',
-            rootCssPath + 'font-awesome.css',
+            rootCssPath + 'bootstrap.min.css',
+            rootCssPath + 'font-awesome.min.css',
             rootCssPath + 'project.css'])
         .pipe(concat("all.css"))
         .pipe(minifyCSS({removeEmpty: true}))
