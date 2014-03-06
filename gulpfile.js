@@ -1,7 +1,10 @@
 var gulp = require('gulp'),
     concat = require('gulp-concat'),
-    rootJsPath = './src/';
-rootCssPath = './css/';
+    minifyCSS = require('gulp-minify-css'),
+    uglify = require('gulp-uglify'),
+    rename = require('gulp-rename'),
+    rootJsPath = './src/',
+    rootCssPath = './css/';
 
 gulp.task('stylesheets', function () {
     gulp.src([
@@ -9,6 +12,7 @@ gulp.task('stylesheets', function () {
             rootCssPath + 'font-awesome.css',
             rootCssPath + 'project.css'])
         .pipe(concat("all.css"))
+        .pipe(minifyCSS({removeEmpty: true}))
         .pipe(gulp.dest('./dist/'))
 });
 
@@ -24,7 +28,10 @@ gulp.task('scripts', function () {
             rootJsPath + 'app/**/*.js',
             rootJsPath + 'app/**/**/*.js',
             rootJsPath + 'application.js'])
-        .pipe(concat("all.js"))
+        .pipe(concat('all.js'))
+        .pipe(gulp.dest('dist'))
+        .pipe(rename('all.min.js'))
+        .pipe(uglify())
         .pipe(gulp.dest('./dist/'))
 });
 
